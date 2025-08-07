@@ -1,24 +1,24 @@
-let nomeHeroi = "Açai Hero"; 
-let xpHeroi = 7520;          
-let nivel;
+// Função para receber vitórias e derrotas, retornando o level do player.
+function calcularNivelRankeadas (vitorias, derrotas){
+    const saldoVitorias = vitorias - derrotas
 
-if (xpHeroi < 1000) {
-  nivel = "Ferro";
-} else if (xpHeroi >= 1001 && xpHeroi <= 2000) {
-  nivel = "Bronze";
-} else if (xpHeroi >= 2001 && xpHeroi <= 5000) {
-  nivel = "Prata";
-} else if (xpHeroi >= 5001 && xpHeroi <= 7000) {
-  nivel = "Ouro";
-} else if (xpHeroi >= 7001 && xpHeroi <= 8000) {
-  nivel = "Platina";
-} else if (xpHeroi >= 8001 && xpHeroi <= 9000) {
-  nivel = "Ascendente";
-} else if (xpHeroi >= 9001 && xpHeroi <= 10000) {
-  nivel = "Imortal";
-} else if (xpHeroi >= 10001) {
-  nivel = "Radiante";
+    let nivel
+
+    if (vitorias <10) {
+        nivel = "Ferro"
+    } else if (vitorias >= 11 && vitorias <= 20) {
+        nivel = "Bronze"
+    } else if (vitorias >= 21 && vitorias <= 50) {
+        nivel = "Prata"
+    } else if (vitorias >= 51 && vitorias <= 80) {
+        nivel = "Ouro"
+    } else if (vitorias >= 81 && vitorias <= 90) {
+        nivel = "Diamante"
+    } else if (vitorias >= 91 && vitorias <= 100){
+        nivel = "Lendário"
+    } else if (vitorias >= 101 && vitorias <= 101){    
+        nivel = "Imortal"
+    }
+
+    return 'O Herói tem de saldo de $ está no nível ${nivel}'
 }
-
-// Resultado
-console.log(`O Herói de nome ${nomeHeroi} está no nível de ${nivel}`);
